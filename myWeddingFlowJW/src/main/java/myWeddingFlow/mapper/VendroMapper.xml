@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myWeddingFlow.mapper.VendorMapper">
+
+<insert id="vendorInsert" parameterType="vendorDTO" resultType="int">
+		insert into vendor(VENDOR_NUM , VENDOR_ID , VENDOR_PASSWORD
+		, VENDOR_NAME, REGISTRATION_NUMBER, REPRESENTATIVE_NAME,
+		VENDOR_MAIN_IMAGE, VENDOR_ADDRESS,VENDOR_ADDRESS_DETAIL
+		,VENDOR_POSTCODE, CATEGORY, VENDOR_PHONE, VENDOR_EMAIL)
+		values(#{vendorNum }, #{vendorId}, #{vendorPassword},
+		#{vendorName}, #{registrationNumber}, #{representativeName},
+		null<!-- mainImage -->, #{vendorAddress},#{vendorAddressDetail},
+		#{vendorPostcode}, #{category}, #{vendorPhone}, #{vendorEmail})
+</insert>
+
+
+</mapper>
