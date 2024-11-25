@@ -9,11 +9,11 @@ import myWeddingFlow.domain.VendorDTO;
 import myWeddingFlow.mapper.VendorMapper;
 
 @Service
-public class VendorWriteService {
+public class VendorUpdateService {
 	@Autowired
 	VendorMapper vendorMapper;
 
-	public void execute(VendorCommand vendorCommand) {
+	public void execute(VendorCommand vendorCommand, String vendorNum) {
 		VendorDTO dto=new VendorDTO();
 		dto.setCategory(vendorCommand.getCategory());
 		dto.setRegistrationNumber(vendorCommand.getRegistrationNumber());
@@ -28,8 +28,9 @@ public class VendorWriteService {
 		dto.setVendorPassword(vendorCommand.getVendorPassword());
 		dto.setVendorPhone(vendorCommand.getVendorName());
 		dto.setVendorPostcode(vendorCommand.getVendorPostcode());
-		vendorMapper.vendorInsert(dto);
+		vendorMapper.vendorUpdate(dto);
 		//System.out.println(i+"개 업체 등록 완료");
 		
 	}
+
 }

@@ -9,7 +9,8 @@ import lombok.Data;
 public class VendorDTO {
 	String vendorNum ; 
 	String vendorId;                     
-	String vendorPassword ;                
+	String vendorPassword ;  
+	String vendorPasswordCon ;              
 	String vendorName    ;                 
 	String registrationNumber ;   //사업자등록번호
 	String representativeName  ;  //대표자 이름          

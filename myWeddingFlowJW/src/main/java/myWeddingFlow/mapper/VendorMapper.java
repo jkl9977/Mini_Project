@@ -7,6 +7,13 @@ import myWeddingFlow.domain.VendorDTO;
 @Mapper
 public interface VendorMapper {
 
-	public int vendorInsert(VendorDTO dto);
+	public void vendorInsert(VendorDTO dto);
+	
+	public VendorDTO vendorSelectOne(String vendorNum);
+
+	public void vendorUpdate(VendorDTO dto);
+	
+	public void vendorDelete(String vendorNum);
+	
 
 }
