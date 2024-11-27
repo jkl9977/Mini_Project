@@ -6,15 +6,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.servlet.http.HttpSession;
 import myWeddingFlow.command.MemberCommand;
-import myWeddingFlow.service.member.MemberUpdateService;
 import myWeddingFlow.service.AutoNumService;
 import myWeddingFlow.service.member.MemberDeleteService;
 import myWeddingFlow.service.member.MemberMyPageService;
 import myWeddingFlow.service.member.MemberRegistService;
+import myWeddingFlow.service.member.MemberUpdateService;
 
 @Controller
 @RequestMapping("member")
