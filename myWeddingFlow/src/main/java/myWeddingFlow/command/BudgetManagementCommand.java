@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class BudgetManagementCommand {
 	String budgetId;
-	String memberId;
+	String memberId; 
 	String category;
 	Integer targetBudget;
 	Integer actualCost;
