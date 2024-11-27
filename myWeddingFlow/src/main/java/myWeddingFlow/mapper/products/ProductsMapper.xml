@@ -1,0 +1,43 @@
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myWeddingFlow.mapper.products.ProductsMapper">
+<insert id="productsWrite" parameterType="productsDTO">
+insert into products(PRODUCT_ID, VENDOR_NUM, PRODUCT_TYPE
+       , PRODUCT_NAME, PRODUCT_CONTENTS, PRODUCT_MAIN_IMAGE,  PRODUCT_PRICE
+       , PENALTY_CONDITION ,AVAILABLE_DATES, CONTRACT_TERMS
+       , AVAILABILITY)
+values(#{productId}, #{vendorNum}, #{productType}, #{productName}
+       , #{productContents}, null, #{productPrice}, #{penaltyCondition}
+       , #{availableDates}, #{contractTerms}, #{availability})
+</insert>
+<select id="productsSelectAll" resultType="productsdto">
+select PRODUCT_ID productId, VENDOR_NUM vendorNum, PRODUCT_TYPE productType
+       , PRODUCT_NAME productName, PRODUCT_CONTENTS productContents
+       , PRODUCT_MAIN_IMAGE productMainImage, PRODUCT_PRICE productPrice
+       , PENALTY_CONDITION penaltyCondition,AVAILABLE_DATES availableDates
+       , CONTRACT_TERMS contractTerms, AVAILABILITY availability
+from products
+</select>
+<select id="productsSelectOne" parameterType="string" resultType="productsDTO">
+select PRODUCT_ID productId, VENDOR_NUM vendorNum, PRODUCT_TYPE productType
+       , PRODUCT_NAME productName, PRODUCT_CONTENTS productContents
+       , PRODUCT_MAIN_IMAGE productMainImage, PRODUCT_PRICE productPrice
+       , PENALTY_CONDITION penaltyCondition,AVAILABLE_DATES availableDates
+       , CONTRACT_TERMS contractTerms, AVAILABILITY availability
+from products
+where PRODUCT_ID = #{productId} 
+</select>
+<update id="productsUpdate" parameterType="productsDTO">
+update products
+set VENDOR_NUM = #{vendorNum}, PRODUCT_TYPE = #{productType}, PRODUCT_NAME = #{productName}
+        , PRODUCT_CONTENTS = #{productContents} <!-- , PRODUCT_MAIN_IMAGE = #{productMainImage} -->
+        , PRODUCT_PRICE = #{productPrice}, PENALTY_CONDITION = #{penaltyCondition}
+        , AVAILABLE_DATES = #{availableDates}, CONTRACT_TERMS = #{contractTerms}
+        , AVAILABILITY = #{availability}
+where PRODUCT_ID = #{productId} 
+</update>
+<delete id="productsDelete" parameterType="string">
+delete from products where PRODUCT_ID = #{productId}
+</delete>
+</mapper>

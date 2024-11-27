@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myWeddingFlow.mapper.planner.PlannerMapper">
+<insert id="plannerRegist" parameterType="plannerDTO">
+insert into planners(planner_NUM, planner_ID
+, planner_NAME , planner_EMAIL
+, planner_PASSWORD, planner_ADDRESS
+, planner_ADDRESS_DETAIL, planner_POSTCODE
+, planner_PHONE1, planner_PHONE2
+, planner_BIRTH, planner_JOIN_DATE
+, planner_PROFILE_IMAGE)
+values(#{plannerNum}, #{plannerId}, #{plannerName}
+      , #{plannerEmail}, #{plannerPassword}, #{plannerAddress}
+      , #{plannerAddressDetail}, #{plannerPostcode}
+      , #{plannerPhone1}, #{plannerPhone2}, #{plannerBirth}
+      , sysdate, null)
+</insert>
+<select id="plannerSelectOne" parameterType="string" resultType="plannerDTO">
+select planner_ID plannerId, planner_NAME plannerName
+ , planner_EMAIL plannerEmail, planner_PASSWORD plannerPassword
+ , planner_ADDRESS plannerAddress, planner_ADDRESS_DETAIL plannerAddressDetail
+ , planner_POSTCODE plannerPostcode, planner_PHONE1 plannerPhone1
+ , planner_PHONE2 plannerPhone2, planner_BIRTH plannerBirth
+ , planner_JOIN_DATE plannerJoinDate, planner_PROFILE_IMAGE plannerProfileImage
+ 
+from planners
+where planner_NUM = #{plannerNum}
+</select>
+<update id="plannerUpdate" parameterType="plannerDTO">
+update planners
+set planner_ID = #{plannerId}, planner_NAME = #{plannerName}
+ , planner_EMAIL = #{plannerEmail}, planner_ADDRESS = #{plannerAddress}
+ , planner_ADDRESS_DETAIL = #{plannerAddressDetail}, planner_POSTCODE = #{plannerPostcode}
+ , planner_PHONE1 = #{plannerPhone1}, planner_PHONE2 = #{plannerPhone2}
+ , planner_BIRTH = #{plannerBirth}, planner_PROFILE_IMAGE = #{plannerProfileImage}
+ from planners
+where planner_NUM = #{plannerNum}
+</update>
+<delete id="plannerDelete" parameterType="string">
+delete from planners where planner_NUM = #{plannerNum}
+</delete>
+
+<select id="plannerNumSelect" parameterType="String" resultType="String">
+select planner_num from planners where planner_id=#{userId}
+</select>
+</mapper>

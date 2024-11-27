@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+list
+<table border="1" align="center" >
+<tr><td>옵션ID</td><td>관련 상품 번호</td><td>옵션 이름</td><td>옵션가격</td><td>옵션 사용 가능여부</td></tr>
+<tr th:each="dto:${list}">
+<td><a th:href="|productOptionsDetail?optionId=${dto.optionId}|">[[${dto.optionId}]]</a></td>
+<td>[[${dto.productId}]]</td><td>[[${dto.optionName}]]</td>
+<td>[[${dto.optionPrice}]]</td><td>[[${dto.isAvailable}]]</td></tr>
+</table>
+</body>
+</html>

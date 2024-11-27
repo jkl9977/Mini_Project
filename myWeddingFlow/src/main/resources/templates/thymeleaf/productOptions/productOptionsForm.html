@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>productOptionsForm.html</title>
+</head>
+<body>
+<form action="productOptionsRegist" method="post" >
+   <table border = "1" width ="600" align="center">
+      <tr><th width="100">옵션ID</th>
+         <td><input type="text" name="optionId"  th:value="${productOptionsCommand.optionId}" /></td></tr>
+      <tr><th width="100">관련 상품 번호</th>
+         <td><input type="text" name="productId" />
+         <input type="button" id="productSearch" value="상품검색"></td></tr>
+      <tr><th>옵션이름</th>
+         <td><input type="text" name="optionName" /></td></tr>   
+      <tr><th>옵션추가금액</th>
+         <td><input type="text" name="optionPrice"  /></td></tr>
+      <tr><th>상품가격</th>
+         <td><input type="text" name="isAvailable" /></td></tr>
+      <!-- th:value="${dto.optionId}"
+      th:value="${dto.productNum}"
+      th:value="${dto.optionName}"
+      th:value="${dto.optionPrice}"
+      th:value="${dto.isAvailable}" -->
+      <input type="submit" value="옵션 등록" /></th></tr>
+   </table>
+</form>
+</body>
+</html>

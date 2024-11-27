@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="budgetManagementModify" method="post" >
+예산관리 수정 페이지
+   <table border = "1" width ="600" align="center">
+      <tr><th width="100">예산 ID</th>
+         <td><input type="text" name="budgetId" th:value="${dto.budgetId}"/>자동생성 예정</td></tr>
+      <tr><th width="100">사용자 ID</th>
+         <td><input type="text" name="memberId" th:value="${dto.memberId}"/></td></tr>
+      <tr><th>예산 항목</th>
+         <td><input type="text" name="category" th:value="${dto.category}"/></td></tr>   
+      <tr><th>목표 예산</th>
+         <td><input type="number" name="targetBudget"  th:value="${dto.targetBudget}"/></td></tr>
+      <tr><th>실제 지출 비용</th>
+         <td><input type="number" name="actualCost"  th:value="${dto.actualCost}"/></td></tr>
+          <tr><th>남은 예산</th>
+         <td><input type="number" name="remainingBudget" th:value="${dto.remainingBudget}"/></td></tr>
+         
+      <tr><th colspan="2"><input type="submit" value="예산관리 수정" /></th>
+      <a th:href="|budgetManagementDelete?budgetId=${dto.budgetId}|">예산관리 삭제</a></tr>
+      
+      <!--
+       th:value="${dto.}"
+       th:value="${dto.}"
+         -->
+   </table>
+</form>
+</body>
+</html>

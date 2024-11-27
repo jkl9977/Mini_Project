@@ -116,10 +116,36 @@
         </nav>
         <div class="auth-links">
             <a href="#">검색</a>
-            <a href="regist">회원가입</a>
-            <a href="#">로그인</a>
-            <a href="#">장바구니</a>
+            
+            <a href="item/itemList.html">웨딩상품</a>
+           <th:block th:if="${auth == null}">
+             <a href="/regist">회원가입</a>
+             <a href="/login/login">로그인</a>
+         </th:block>
+            
+            <th:block th:if="${auth != null}">
+            <th:block th:if="${auth.grade=='mem'}">
             <a href="member/memberMyPage">회원 마이페이지</a>
+         
+            <a href="#">장바구니</a>
+            </th:block>
+            <th:block th:if="${auth.grade=='plan'}">
+            <a href="planner/plannerMyPage">플래너 마이페이지</a>
+            </th:block>
+            
+            <th:block th:if="${auth.grade=='ven'}">
+            <a href="vendor/vendorMyPage">업체 마이페이지</a>
+            </th:block>
+            </th:block>
+            
+            <a href="products/productsForm">상품등록</a>
+            <a href="products/productsList">상품목록</a>
+            <a href="productOptions/productOptionsWrite">상품옵션</a>
+            <a href="productOptions/productOptionsList">상품옵션목록</a>
+            <a href="checklists/checklistsList">체크리스트</a>
+            <a href="reviews/reviewsList">후기</a>
+            <a href="schedules/schedulesList">일정</a>
+            <a href="budgetManagement/budgetManagementList">예산관리</a>
             
         </div>
     </header>

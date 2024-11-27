@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myWeddingFlow.mapper.schedules.SchedulesMapper">
+<insert id="schedulesInsert" parameterType="schedulesDTO">
+insert into schedules(SCHEDULE_ID, MEMBER_ID, SCHEDULE_SUBJECT
+          , SCHEDULE_CONTENTS, SCHEDULE_DATE, START_TIME
+          , END_TIME, SCHEDULE_LOCATION, SCHEDULE_STATUS)
+values(#{scheduleId}, #{memberId}, #{scheduleSubject}
+         , #{scheduleContents}, #{scheduleDate}, #{startTime}
+         , #{endTime}, #{scheduleLocation}, #{scheduleStatus})
+</insert>
+<select id="schedulesSelectAll" resultType="schedulesDTO">
+select SCHEDULE_ID scheduleId , MEMBER_ID memberId
+            , SCHEDULE_SUBJECT scheduleSubject
+            , SCHEDULE_CONTENTS scheduleContents
+            , SCHEDULE_DATE scheduleDate
+            , START_TIME startTime, END_TIME endTime
+            , SCHEDULE_LOCATION scheduleLocation
+             , SCHEDULE_STATUS scheduleStatus
+from schedules
+</select>
+<select id="schedulesSelectOne" parameterType="string" resultType="schedulesDTO">
+select SCHEDULE_ID scheduleId , MEMBER_ID memberId
+            , SCHEDULE_SUBJECT scheduleSubject
+            , SCHEDULE_CONTENTS scheduleContents
+            , SCHEDULE_DATE scheduleDate
+            , START_TIME startTime, END_TIME endTime
+            , SCHEDULE_LOCATION scheduleLocation
+             , SCHEDULE_STATUS scheduleStatus
+from schedules
+where SCHEDULE_ID = #{scheduleId}
+</select>
+<update id="schedulesUpdate" parameterType="schedulesDTO">
+update schedules
+set MEMBER_ID = #{memberId}
+            , SCHEDULE_SUBJECT = #{scheduleSubject}
+            , SCHEDULE_CONTENTS = #{scheduleContents}
+            , SCHEDULE_DATE = #{scheduleDate}
+            , START_TIME = #{startTime}, END_TIME = #{endTime}
+            , SCHEDULE_LOCATION = #{scheduleLocation}
+             , SCHEDULE_STATUS = #{scheduleStatus}
+where SCHEDULE_ID = #{scheduleId}
+</update>
+<delete id="schedulesDelete" parameterType="string">
+delete from schedules where SCHEDULE_ID = #{scheduleId}
+</delete>
+</mapper>

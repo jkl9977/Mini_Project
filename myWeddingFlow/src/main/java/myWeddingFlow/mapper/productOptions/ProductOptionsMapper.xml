@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myWeddingFlow.mapper.productOptions.ProductOptionsMapper">
+<insert id = "productOptionsInsert" parameterType="productOptionsDTO">
+insert into product_Options(OPTION_ID, PRODUCT_ID, OPTION_NAME
+                      , OPTION_PRICE, IS_AVAILABLE)
+values(#{optionId}, #{productId}, #{optionName}
+           , #{optionPrice}, #{isAvailable})
+</insert>
+<select id="productOptionsSelectAll" resultType="productOptionsDTO">
+select OPTION_ID optionId, PRODUCT_ID productId, OPTION_NAME optionName
+      , OPTION_PRICE optionPrice, IS_AVAILABLE isAvailable
+from product_Options
+</select>
+<select id="productOptionsSelectOne" parameterType="string" resultType="productOptionsDTO">
+select OPTION_ID optionId, PRODUCT_ID productId, OPTION_NAME optionName
+      , OPTION_PRICE optionPrice, IS_AVAILABLE isAvailable
+from product_Options
+where OPTION_ID = #{optionId}
+</select>
+<update id="productOptionsUpdate" parameterType="productOptionsDTO">
+update product_Options set
+ PRODUCT_ID = #{productId}, OPTION_NAME = #{optionName}
+      , OPTION_PRICE = #{optionPrice}, IS_AVAILABLE = #{isAvailable}
+where OPTION_ID = #{optionId}
+</update>
+<delete id = "productOptionsDelete" parameterType="string">
+delete from product_Options where OPTION_ID = #{optionId}
+</delete>
+</mapper>

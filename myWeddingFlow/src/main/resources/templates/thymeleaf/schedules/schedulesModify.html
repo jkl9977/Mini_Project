@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="schedulesModify" method="post" >
+일정 수정 페이지
+   <table border = "1" width ="600" align="center">
+      <tr><th width="100">일정 ID</th>
+         <td><input type="text" name="scheduleId" th:value="${dto.scheduleId}"/>자동생성 예정</td></tr>
+      <tr><th width="100">사용자 ID</th>
+         <td><input type="text" name="memberId" th:value="${dto.memberId}"/></td></tr>
+      <tr><th>일정 항목</th>
+         <td><input type="text" name="scheduleSubject" th:value="${dto.scheduleSubject}"/></td></tr>   
+      <tr><th>일정 설명</th>
+         <td><textarea rows="10" cols="50" name="scheduleContents" >[[${dto.scheduleContents}]]</textarea></td></tr>
+      <tr><th>일정 날짜</th>
+         <td><input type="date" name="scheduleDate"  th:value="${dto.scheduleDate}"/></td></tr>
+          <tr><th>일정 시작 시간</th>
+         <td><input type="date" name="startTime" th:value="${dto.startTime}"/></td></tr>
+         <tr><th>일정 종료 시간</th>
+         <td><input type="date" name="endTime"  th:value="${dto.endTime}"/></td></tr>
+      <tr><th>일정 장소</th>
+         <td><input type="text" name="scheduleLocation"  th:value="${dto.scheduleLocation}"/></td></tr>
+          <tr><th>일정 상태</th>
+         <td><input type="text" name="scheduleStatus" th:value="${dto.scheduleStatus}"/></td></tr>
+         
+      <tr><th colspan="2"><input type="submit" value="일정 수정" /></th>
+      <a th:href="|schedulesDelete?scheduleId=${dto.scheduleId}|">일정 삭제</a></tr>
+      
+      <!--
+       th:value="${dto.}"
+       th:value="${dto.}"
+         -->
+   </table>
+</form>
+</body>
+</html>

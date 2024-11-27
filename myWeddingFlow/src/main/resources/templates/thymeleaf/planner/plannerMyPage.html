@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+플래너상세 페이지입니다.<br />
+플래너번호 : [[${dto.plannerNum}]]<br />
+플래너아이디 : [[${dto.plannerId}]]<br />
+플래너비밀번호 :  [[${dto.plannerPassword}]]<br />
+플래너비밀번호확인 : [[${dto.plannerPasswordCon}]]<br />
+플래너명 :     [[${dto.plannerName}]]<br />
+플래너주소 : 	[[${dto.plannerAddress}]]<br />
+상세주소 : 	[[${dto.plannerAddressDetail}]]<br />
+우편번호 : 	[[${dto.plannerPostcode}]]<br />
+플래너연락처1 : 	[[${dto.plannerPhone1}]]<br />
+플래너연락처2 : 	[[${dto.plannerPhone2}]]<br />
+플래너생년월일 : 	[[${dto.plannerBirth}]]<br />
+플래너이메일 : 	[[${dto.plannerEmail}]]<br />
+등록일 :       [[${dto.plannerJoinDate}]]<br />
+<a th:href="|plannerUpdate?plannerNum=${dto.plannerNum}|"> 플래너 수정</a> |
+<a th:href="|plannerDelete?plannerNum=${dto.plannerNum}|"> 플래너 탈퇴</a> |
+</body>
+</html>
+
+
+
+
+

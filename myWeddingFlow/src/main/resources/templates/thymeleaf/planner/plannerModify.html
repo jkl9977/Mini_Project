@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+플래너수정 페이지입니다.<br />
+<form action="plannerModify" method="post" >
+<input type="hidden" name="plannerPassword" />
+<input type="hidden" name="plannerPasswordCon" />
+플래너번호 : <input type="text" name="plannerNum" th:value="{dto.plannerNum}" ><br />
+플래너아이디 : <input type="text" name="plannerId" th:value="{dto.plannerId}" /><br />
+플래너명 : <input type="text" name="plannerName" th:value="{dto.plannerName}" /><br />
+주소 : <input type="text" name="plannerAddress" th:value="{dto.plannerAddress}" /><br />
+상세주소 : <input type="text" name="plannerAddressDetail" th:value="{dto.plannerAddressDetail}"/><br />
+우편번호 : <input type="text" name="plannerPostcode" th:value="{dto.plannerPostcode}"/><br />
+플래너연락처1 : <input type="tel" name="plannerPhone1" th:value="{dto.plannerPhone1}"/><br />
+플래너연락처2 : <input type="tel" name="plannerPhone2" th:value="{dto.plannerPhone2}"/><br />
+생년월일 : <input type="date" name="plannerBirth" th:value="{dto.plannerBirth}"/><br />
+이메일 : <input type="email" name="plannerEmail" th:value="{dto.plannerEmail}"/><br />
+등록일 : <input type="date" name="plannerJoinDate" th:value="{dto.plannerJoinDate}"/><br />
+<input type="submit" value="플래너수정 완료" /> 
+</body>
+</html>

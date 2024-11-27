@@ -24,13 +24,24 @@ select MEMBER_ID memberId, MEMBER_NAME memberName
  , MEMBER_POSTCODE memberPostcode, MEMBER_PHONE1 memberPhone1
  , MEMBER_PHONE2 memberPhone2, MEMBER_BIRTH memberBirth
  , MEMBER_JOIN_DATE memberJoinDate, MEMBER_PROFILE_IMAGE memberProfileImage
+ from members
 where MEMBER_NUM = #{memberNum}
+</select>
+<update id="memberUpdate" parameterType="memberDTO">
+update members
+set MEMBER_ID = #{memberId}, MEMBER_NAME = #{memberName}
+ , MEMBER_EMAIL = #{memberEmail}, MEMBER_ADDRESS = #{memberAddress}
+ , MEMBER_ADDRESS_DETAIL = #{memberAddressDetail}, MEMBER_POSTCODE = #{memberPostcode}
+ , MEMBER_PHONE1 = #{memberPhone1}, MEMBER_PHONE2 = #{memberPhone2}
+ , MEMBER_BIRTH = #{memberBirth}, MEMBER_PROFILE_IMAGE = #{memberProfileImage}
+ from members
+where MEMBER_NUM = #{memberNum}
+</update>
+<delete id="memberDelete" parameterType="string">
+delete from members where MEMBER_NUM = #{memberNum}
+</delete>
 
-
-
-
-
-
-
+<select id="memberNumSelect" parameterType="String" resultType="String">
+select member_num from members where member_id=#{userId}
 </select>
 </mapper>
