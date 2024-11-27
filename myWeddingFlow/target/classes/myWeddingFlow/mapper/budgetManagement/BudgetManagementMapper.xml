@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myWeddingFlow.mapper.budgetManagement.BudgetManagementMapper">
+<insert id="budgetManagementInsert" parameterType="budgetManagementDTO">
+insert into budget_management(BUDGET_ID, MEMBER_ID, CATEGORY
+             , TARGET_BUDGET, ACTUAL_COST
+             , REMAINING_BUDGET)
+values(#{budgetId}, #{memberId}, #{category}
+     , #{targetBudget}, #{actualCost}
+     , #{remainingBudget})
+</insert>
+<select id= "budgetManagementSelectAll" resultType="budgetManagementDTO">
+select BUDGET_ID budgetId, MEMBER_ID memberId, CATEGORY category
+             , TARGET_BUDGET targetBudget, ACTUAL_COST actualCost
+             , REMAINING_BUDGET remainingBudget
+from budget_management
+</select>
+<select id= "budgetManagementSelectOne" parameterType="string" resultType="budgetManagementDTO">
+select BUDGET_ID budgetId, MEMBER_ID memberId, CATEGORY category
+             , TARGET_BUDGET targetBudget, ACTUAL_COST actualCost
+             , REMAINING_BUDGET remainingBudget
+from budget_management
+where BUDGET_ID = #{budgetId}
+</select>
+<update id="budgetManagementUpdate" parameterType="budgetManagementDTO">
+update budget_management
+set MEMBER_ID = #{memberId} , CATEGORY = #{category}
+             , TARGET_BUDGET = #{targetBudget}, ACTUAL_COST = #{actualCost}
+             , REMAINING_BUDGET = #{remainingBudget}
+where BUDGET_ID = #{budgetId}
+</update>
+<delete id="budgetManagementDelete" parameterType="string">
+delete from budget_management where BUDGET_ID = #{budgetId}
+</delete>
+</mapper>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myWeddingFlow.mapper.member.MemberMapper">
+<insert id="memberRegist" parameterType="memberDTO">
+insert into members(MEMBER_NUM, MEMBER_ID
+, MEMBER_NAME , MEMBER_EMAIL
+, MEMBER_PASSWORD, MEMBER_ADDRESS
+, MEMBER_ADDRESS_DETAIL, MEMBER_POSTCODE
+, MEMBER_PHONE1, MEMBER_PHONE2
+, MEMBER_BIRTH, MEMBER_JOIN_DATE
+, MEMBER_PROFILE_IMAGE)
+values(#{memberNum}, #{memberId}, #{memberName}
+      , #{memberEmail}, #{memberPassword}, #{memberAddress}
+      , #{memberAddressDetail}, #{memberPostcode}
+      , #{memberPhone1}, #{memberPhone2}, #{memberBirth}
+      , sysdate, null)
+</insert>
+<select id="memberSelectOne" parameterType="string" resultType="memberDTO">
+select MEMBER_ID memberId, MEMBER_NAME memberName
+ , MEMBER_EMAIL memberEmail, MEMBER_PASSWORD memberPassword
+ , MEMBER_ADDRESS memberAddress, MEMBER_ADDRESS_DETAIL memberAddressDetail
+ , MEMBER_POSTCODE memberPostcode, MEMBER_PHONE1 memberPhone1
+ , MEMBER_PHONE2 memberPhone2, MEMBER_BIRTH memberBirth
+ , MEMBER_JOIN_DATE memberJoinDate, MEMBER_PROFILE_IMAGE memberProfileImage
+ from members
+where MEMBER_NUM = #{memberNum}
+</select>
+<update id="memberUpdate" parameterType="memberDTO">
+update members
+set MEMBER_ID = #{memberId}, MEMBER_NAME = #{memberName}
+ , MEMBER_EMAIL = #{memberEmail}, MEMBER_ADDRESS = #{memberAddress}
+ , MEMBER_ADDRESS_DETAIL = #{memberAddressDetail}, MEMBER_POSTCODE = #{memberPostcode}
+ , MEMBER_PHONE1 = #{memberPhone1}, MEMBER_PHONE2 = #{memberPhone2}
+ , MEMBER_BIRTH = #{memberBirth}, MEMBER_PROFILE_IMAGE = #{memberProfileImage}
+ from members
+where MEMBER_NUM = #{memberNum}
+</update>
+<delete id="memberDelete" parameterType="string">
+delete from members where MEMBER_NUM = #{memberNum}
+</delete>
+
+<select id="memberNumSelect" parameterType="String" resultType="String">
+select member_num from members where member_id=#{userId}
+</select>
+</mapper>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myWeddingFlow.mapper.login.LoginMapper">
+
+<!-- <resultMap type="myWeddingFlow.domain.AuthInfoDTO" id="memberAuth">
+	<result column="member_id" property="userId" jdbcType="VARCHAR"/>
+	<result column="member_password" property="userPw" jdbcType="VARCHAR"/>
+	<result column="member_name" property="userName" jdbcType="VARCHAR"/>
+	<result column="member_email" property="userEmail" jdbcType="VARCHAR"/>4
+	<result column="grade" property="grade" jdbcType="VARCHAR"/>
+</resultMap>
+
+<resultMap type="myWeddingFlow.domain.AuthInfoDTO" id="plannerAuth">
+	<result column="planner_id" property="userId" jdbcType="VARCHAR"/>
+	<result column="planner_password" property="userPw" jdbcType="VARCHAR"/>
+	<result column="planner_name" property="userName" jdbcType="VARCHAR"/>
+	<result column="planner_email" property="userEmail" jdbcType="VARCHAR"/>4
+	<result column="grade" property="grade" jdbcType="VARCHAR"/>
+</resultMap>
+
+<resultMap type="myWeddingFlow.domain.AuthInfoDTO" id="vendorAuth">
+	<result column="vendor_id" property="userId" jdbcType="VARCHAR"/>
+	<result column="vendor_password" property="userPw" jdbcType="VARCHAR"/>
+	<result column="vendor_name" property="userName" jdbcType="VARCHAR"/>
+	<result column="vendor_email" property="userEmail" jdbcType="VARCHAR"/>4
+	<result column="grade" property="grade" jdbcType="VARCHAR"/>
+</resultMap> -->
+
+ 
+<select id="memberLoginSelectOne" parameterType="string" resultType="auth">
+select member_id as userId, member_password as userPw, member_name as userName
+, member_Email as userEmail, 'mem' as grade
+from members where member_id=#{user_id}
+
+</select>
+
+<select id="plannerLoginSelectOne" parameterType="string" resultType="auth">
+select planner_id as userId, planner_password as userPw, planner_name as userName
+, planner_Email as userEmail, 'plan' as grade
+from planners where planner_id=#{user_id}
+
+</select>
+
+<select id="vendorLoginSelectOne" parameterType="string" resultType="auth">
+select vendor_id as userId, vendor_password as userPw, vendor_name as userName
+, vendor_Email as userEmail, 'ven' as grade
+from vendors where vendor_id=#{user_id}
+
+</select>
+
+</mapper>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myWeddingFlow.mapper.checklists.ChecklistsMapper">
+<insert id="checklistsInsert" parameterType="checklistsDTO">
+insert into checklists(CHECKLIST_ID, MEMBER_ID
+            , CHECKLIST_SUBJECT, GOAL_DATE
+            , CHECKLIST_CONTENTS, IS_COMPLETED)
+values(#{checklistId}, #{memberId},
+        #{checklistSubject}, #{goalDate}
+        , #{checklistContents}, #{isCompleted})
+</insert>
+<select id="checklistsSelectAll" resultType="checklistsDTO">
+select CHECKLIST_ID checklistId, MEMBER_ID memberId
+            , CHECKLIST_SUBJECT checklistSubject, GOAL_DATE goalDate
+            , CHECKLIST_CONTENTS checklistContents, IS_COMPLETED isCompleted
+from checklists
+</select>
+<select id="checklistsSelectOne" parameterType="string" resultType="checklistsDTO">
+select CHECKLIST_ID checklistId, MEMBER_ID memberId
+            , CHECKLIST_SUBJECT checklistSubject, GOAL_DATE goalDate
+            , CHECKLIST_CONTENTS checklistContents, IS_COMPLETED isCompleted
+from checklists
+where CHECKLIST_ID = #{checklistId}
+</select>
+<update id="checklistsUpdate" parameterType="checklistsDTO">
+update checklists
+set MEMBER_ID = #{memberId}, CHECKLIST_SUBJECT = #{checklistSubject}
+            , GOAL_DATE = #{goalDate}
+            , CHECKLIST_CONTENTS = #{checklistContents}
+where CHECKLIST_ID = #{checklistId}
+
+</update>
+<delete id="checklistsDelete" parameterType="string">
+delete from checklists where CHECKLIST_ID = #{checklistId}
+</delete>
+</mapper>

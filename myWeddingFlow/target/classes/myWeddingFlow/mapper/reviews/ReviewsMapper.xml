@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myWeddingFlow.mapper.reviews.ReviewsMapper">
+<insert id="reviewsInsert" parameterType="reviewsDTO">
+insert into reviews(REVIEW_ID, PRODUCT_ID, MEMBER_ID
+              , RATING, REVIEW_CONTENTS, REVIEW_DATE)
+values(#{reviewId}, #{productId}, #{memberId}
+  , #{rating}, #{reviewContents}, sysdate)
+</insert>
+<select id="reviewsSelectAll" resultType="reviewsDTO">
+select REVIEW_ID reviewId, PRODUCT_ID productId
+     , MEMBER_ID memberId
+      , RATING rating, REVIEW_CONTENTS reviewContents
+      , REVIEW_DATE reviewDate
+from reviews
+</select>
+<select id="reviewsSelectOne" parameterType="string" resultType="reviewsDTO">
+select REVIEW_ID reviewId, PRODUCT_ID productId
+     , MEMBER_ID memberId
+      , RATING rating, REVIEW_CONTENTS reviewContents
+      , REVIEW_DATE reviewDate
+from reviews
+where REVIEW_ID = #{reviewId}
+</select>
+<select id="reviewsUpdate" parameterType="reviewsDTO">
+update reviews
+set    PRODUCT_ID = #{productId}
+     , MEMBER_ID = #{memberId}
+      , RATING = #{rating}, REVIEW_CONTENTS = #{reviewContents}
+      , REVIEW_DATE = #{reviewDate}
+where REVIEW_ID = #{reviewId}
+</select>
+<delete id="reviewsDelete" parameterType="string">
+delete from reviews where REVIEW_ID = #{reviewId}
+</delete>
+</mapper>
