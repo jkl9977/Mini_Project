@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<a href="reviewsWrite">리뷰 작성하기</a>
+   <table border = "1" width ="600" align="center">
+      <tr><th>리뷰 ID</th><th>리뷰 대상 상품ID</th><th>작성자 ID</th><th>평점</th><th>리뷰 내용</th><th>리뷰 작성 날짜</th></tr>
+      <tr th:each="dto:${list}">
+         <td><a th:href="|reviewsDetail?reviewId=${dto.reviewId}|">[[${dto.reviewId}]]</a></td>
+         <td>[[${dto.productId}]]</td>
+         <td>[[${dto.memberId}]]</td>
+     
+         <td>[[${dto.rating}]]</td>
+         <td>[[${dto.reviewContents}]]</td>
+         <td>[[${dto.reviewDate}]]</td>
+         </tr>
+      <!--  -->
+      
+   </table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+일정  상세내용 페이지
+   <table border = "1" width ="600" align="center">
+      <tr><th width="100">일정 ID</th>
+         <td>[[${dto.scheduleId}]]</td></tr>
+      <tr><th width="100">사용자 ID</th>
+         <td>[[${dto.memberId}]]</td></tr>
+      <tr><th>일정 제목</th>
+         <td>[[${dto.scheduleSubject}]]</td></tr>   
+      <tr><th>일정 설명</th>
+         <td>[[${dto.scheduleContents}]]</td></tr>
+      <tr><th>일정 날짜</th>
+         <td>[[${dto.scheduleDate}]]</td></tr>
+      <tr><th>일정 시작 시간</th>
+         <td>[[${dto.startTime}]]</td></tr>
+          <tr><th>일정 종료 시간</th>
+         <td>[[${dto.endTime}]]</td></tr>
+      <tr><th>일정 장소</th>
+         <td>[[${dto.scheduleLocation}]]</td></tr>
+         <tr><th>일정 상태</th>
+         <td>[[${dto.scheduleStatus}]]</td></tr>
+      <tr><td  colspan="2">         
+      <a th:href="|schedulesUpdate?scheduleId=${dto.scheduleId}|">일정 수정</a>
+      <a th:href="|schedulesDelete?scheduleId=${dto.scheduleId}|">일정 삭제</a>
+      </tr>
+      <!--  -->
+      
+   </table>
+</body>
+</html>

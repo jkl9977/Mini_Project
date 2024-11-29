@@ -1,0 +1,6 @@
+String checklistId
+String memberId
+String checklistSubject
+Date goalDate
+String checklistContents
+String isCompleted

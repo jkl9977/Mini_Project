@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>productOptionsDetail</title>
+</head>
+<body>
+일정  상세내용 페이지
+   <table border = "1" width ="600" align="center">
+      <tr><th width="100">일정 ID</th>
+         <td>[[${dto.reservationId}]]</td></tr>
+      <tr><th width="100">결제 ID</th>
+         <td>[[${dto.paymentId}]]</td></tr>
+      <tr><th>예약한 사용자 ID</th>
+         <td>[[${dto.memberId}]]</td></tr>   
+      <tr><th>예약한 상품 ID</th>
+         <td>[[${dto.productId}]]</td></tr>
+      <tr><th>총 예약 금액</th>
+         <td>[[${dto.totalPrice}]]</td></tr>
+      <tr><th>예약 날짜</th>
+         <td>[[${dto.reservationDate}]]</td></tr>
+          <tr><th>예약 상태</th>
+         <td>[[${dto.status}]]</td></tr>
+      <tr><td  colspan="2">         
+      <a th:href="|reservationsUpdate?reservationId=${dto.reservationId}|">일정 수정</a>
+      <a th:href="|reservationsDelete?reservationId=${dto.reservationId}|">일정 삭제</a>
+      </tr>
+      <!--  -->
+      
+   </table>
+</body>
+</html>

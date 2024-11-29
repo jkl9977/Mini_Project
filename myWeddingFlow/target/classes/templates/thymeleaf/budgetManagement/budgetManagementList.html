@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+예산 리스트 html<br/>
+<a href="budgetManagementWrite">예산 작성하기</a>
+   <table border = "1" width ="600" align="center">
+      <tr><th>예산 ID</th><th>사용자 ID</th><th>예산 항목</th>
+      <th>목표 예산</th><th>실제 지출 비용</th><th>남은 예산</th></tr>
+      <tr th:each="dto:${list}">
+         <td><a th:href="|budgetManagementDetail?budgetId=${dto.budgetId}|">
+         [[${dto.budgetId}]]</a></td>
+         <td>[[${dto.memberId}]]</td>
+         <td>[[${dto.category}]]</td>
+     
+         <td>[[${dto.targetBudget}]]</td>
+         <td>[[${dto.actualCost}]]</td>
+         <td>[[${dto.remainingBudget}]]</td>
+         </tr>
+      <!--  -->
+      
+   </table>
+</body>
+</html>

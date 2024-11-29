@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+플래너등록 페이지입니다.<br />
+<form action="plannerRegist" method="post" >
+플래너번호 :        	<input type="text" name="plannerNum" th:value="${plannerCommand.plannerNum}"/><br />
+플래너아이디 :      	<input type="text" name="plannerId"  /><br />
+플래너비밀번호 :    	<input type="password" name="plannerPassword" /><br />
+플래너비밀번호확인 : 	<input type="password" name="plannerPasswordCon" /><br />
+플래너명 :         	<input type="text" name="plannerName"  /><br />
+플래너주소 : 		<input type="text" name="plannerAddress" /><br />
+상세주소 : 		<input type="text" name="plannerAddressDetail" /><br />
+우편번호 : 		<input type="text" name="plannerPostcode" /><br />
+플래너연락처1 : 		<input type="tel" name="plannerPhone1" /><br />
+플래너연락처2 : 		<input type="tel" name="plannerPhone2" /><br />
+플래너생년월일 : 		<input type="date" name="plannerBirth" /><br />
+플래너이메일 : 		<input type="email" name="plannerEmail" /><br />
+<input type="submit" value="플래너등록" />
+</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <table border = "1" width ="600" align="center">
+      <tr><th width="100">상품번호</th>
+         <td>[[${dto.productId}]]</td></tr>
+      <tr><th width="100">업체번호</th>
+         <td>[[${dto.vendorNum}]]</td></tr>
+      <tr><th>상품유형</th>
+         <td>[[${dto.productType}]]</td></tr>   
+      <tr><th>상품명</th>
+         <td>[[${dto.productName}]]</td></tr>
+      <tr><th>상품가격</th>
+         <td>[[${dto.productPrice}]]</td></tr>
+      <tr><th>상품설명</th>
+         <td>[[${dto.productContents}]]</td></tr>
+      <tr><th>상품이미지</th>
+         <td>[[${dto.productMainImage}]]</td></tr>   
+      <tr><th>위약금조건</th>
+         <td>[[${dto.penaltyCondition}]]</td></tr>
+      <tr><th>예약가능 날짜 목록</th>
+         <td>[[${dto.availableDates}]]</td></tr>
+      <tr><th>계약조건</th>
+         <td>[[${dto.contractTerms}]]</td></tr>
+      <tr><th>예약가능여부</th>
+         <td>[[${dto.availability}]]</td></tr>      
+      <tr>
+     <th colspan="2"><a th:href="|productsUpdate?productId=${dto.productId}|">상품수정</a>
+      	<a th:href="|productsDelete?productId=${dto.productId}|">상품삭제</a>
+      </th></tr>
+   </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>일정</title>
+</head>
+<body>
+<form action="reservationsUpdate" method="post" >
+예약관리 수정 페이지
+   <table border = "1" width ="600" align="center">
+      <tr><th width="100">예약 ID</th>
+         <td><input type="text" name="reservationId" th:value="${dto.reservationId}"/>자동생성 예정</td></tr>
+      <tr><th width="100">결제 ID</th>
+         <td><input type="text" name="paymentId" th:value="${dto.paymentId}"/></td></tr>
+      <tr><th>예약한 사용자 ID</th>
+         <td><input type="text" name="memberId" th:value="${dto.memberId}"/></td></tr>   
+      <tr><th>예약한 상품 ID</th>
+         <td><input type="text" name="productId"  th:value="${dto.productId}"/></td></tr>
+      <tr><th>총 예약 금액</th>
+         <td><input type="number" name="totalPrice"  th:value="${dto.totalPrice}"/></td></tr>
+          <tr><th>예약 날짜</th>
+         <td><input type="date" name="reservationDate" th:value="${dto.reservationDate}"/></td></tr>
+              <tr><th>예약 상태</th>
+         <td><input type="text" name="status" th:value="${dto.status}"/></td></tr>
+      <tr><th colspan="2"><input type="submit" value="예약관리 수정" /></th>
+      <a th:href="|reservationsDelete?reservationId=${dto.reservationId}|">예약관리 삭제</a></tr>
+      
+      <!--
+       th:value="${dto.}"
+       th:value="${dto.}"
+         -->
+   </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="reviewsModify" method="post" >
+리뷰 수정 페이지
+   <table border = "1" width ="600" align="center">
+      <tr><th width="100">리뷰 ID</th>
+         <td><input type="text" name="reviewId" th:value="${dto.reviewId}"/>자동생성 예정</td></tr>
+      <tr><th width="100">리뷰 대상 상품ID</th>
+         <td><input type="text" name="productId" th:value="${dto.productId}"/></td></tr>
+      <tr><th>작성자 ID</th>
+         <td><input type="text" name="memberId" th:value="${dto.memberId}"/></td></tr>   
+      <tr><th>평점</th>
+         <td><input type="number" name="rating"  th:value="${dto.rating}"/></td></tr>
+      <tr><th>리뷰 내용</th>
+         <td><textarea rows="10" cols="50" name="reviewContents" >[[${dto.reviewContents}]]</textarea></td></tr>
+          <tr><th>리뷰 작성 날짜</th>
+         <td><input type="date" name="reviewDate" th:value="${dto.reviewDate}"/></td></tr>
+         
+      <tr><th colspan="2"><input type="submit" value="리뷰 수정" /></th>
+      <a th:href="|reviewsDelete?reviewId=${dto.reviewId}|">리뷰 삭제</a></tr>
+      
+      <!--
+       th:value="${dto.}"
+       th:value="${dto.}"
+         -->
+   </table>
+</form>
+</body>
+</html>

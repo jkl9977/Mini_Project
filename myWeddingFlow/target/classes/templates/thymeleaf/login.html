@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="/login/member" method="post" ><!-- th:object="${loginCommand}" -->
+회원 로그인
+<table border="1" align="center">
+   <tr><td><input type="text" name="userId" placeholder="아이디" />
+   <br/><!-- <span style="color:red" th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}" th:value="${loginCommand.userId}"></span> -->
+      </td>
+      <td rowspan="2">
+         <input type="image" src="/static/images/오케바리.gif" width="60"/>
+      </td>
+   </tr>
+   <tr><td><input type="password" name="userPw" placeholder="비밀번호" />
+   <br/><!-- <span style="color:red" th:if="${#fields.hasErrors('userPw')}" th:errors="*{userPw}" th:value="${loginCommand.userPw}"></span> -->
+      </td></tr>
+</table>
+</form>
+<form action="/login/planner" method="post">
+플래너 로그인
+<table border="1" align="center">
+   <tr><td><input type="text" name="userId" placeholder="아이디"  />
+   <br/><!-- <span style="color:red" th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}" th:value="${loginCommand.userId}"></span> -->
+      </td>
+      <td rowspan="2">
+         <input type="image" src="/static/images/오케바리.gif" width="60"/>
+      </td>
+   </tr>
+   <tr><td><input type="password" name="userPw" placeholder="비밀번호" />
+   <br/><!-- <span style="color:red" th:if="${#fields.hasErrors('userPw')}" th:errors="*{userPw}" th:value="{loginCommand.userPw}"></span> -->
+      </td></tr>
+</table>
+</form>
+<form action="/login/vendor" method="post">
+업체 로그인
+<table border="1" align="center">
+   <tr><td><input type="text" name="userId" placeholder="아이디" />
+      <br/><!-- <span style="color:red" th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}" th:value="${loginCommand.userId}"></span> -->
+      </td>
+      <td rowspan="2">
+         <input type="image" src="/static/images/오케바리.gif" width="60"/>
+      </td>
+   </tr>
+   <tr><td><input type="password" name="userPw" placeholder="비밀번호" />
+   <br/><!-- <span style="color:red" th:if="${#fields.hasErrors('userPw')}" th:errors="*{userPw}" th:value="${loginCommand.userPw}"></span> -->
+      </td></tr>
+</table>
+</form>
+</body>
+</html>

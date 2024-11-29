@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="productsForm" method="post" >
+	<table border = "1" width ="600" align="center">
+		<tr><th width="100">상품번호</th>
+			<td><input type="text" name="productId" th:value="${productsCommand.productId}" /></td></tr>
+		<tr><th width="100">업체번호</th>
+			<td><input type="text" name="vendorNum" /></td></tr>
+		<tr><th>상품유형</th>
+			<td><input type="text" name="productType" /></td></tr>	
+		<tr><th>상품명</th>
+			<td><input type="text" name="productName" /></td></tr>
+		<tr><th>상품가격</th>
+			<td><input type="number" name="productPrice" /></td></tr>
+		<tr><th>상품설명</th>
+			<td><textarea rows="10" cols="50" name="productContents" ></textarea></td></tr>
+		<tr><th>상품이미지</th>
+			<td><input type="file" name="productMainImage" /></td></tr>	
+		<tr><th>위약금조건</th>
+			<td><input type="text" name="penaltyCondition" /></td></tr>
+		<tr><th>예약가능 날짜 목록</th>
+			<td><input type="date" name="availableDates" /></td></tr>
+		<tr><th>계약조건</th>
+			<td><input type="text" name="contractTerms" /></td></tr>
+		<tr><th>예약가능여부</th>
+			<td><input type="text" name="availability" /></td></tr>		
+		<tr><th colspan="2">
+		<input type="submit" value="상품 등록" /></th></tr>
+	</table>
+</form>
+</body>
+</html>

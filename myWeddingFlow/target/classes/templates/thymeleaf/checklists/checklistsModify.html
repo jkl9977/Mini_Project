@@ -1,0 +1,24 @@
+<form action="checklistsModify" method="post" >
+체크리스트 수정 페이지
+   <table border = "1" width ="600" align="center">
+      <tr><th width="100">체크리스트 ID</th>
+         <td><input type="text" name="checklistId" th:value="${dto.checklistId}"/>자동생성 예정</td></tr>
+      <tr><th width="100">사용자 ID</th>
+         <td><input type="text" name="memberId" th:value="${dto.memberId}"/></td></tr>
+      <tr><th>체크리스트 제목</th>
+         <td><input type="text" name="checklistSubject" th:value="${dto.checklistSubject}"/></td></tr>   
+      <tr><th>목표 날짜</th>
+         <td><input type="date" name="goalDate"  th:value="${dto.goalDate}"/></td></tr>
+      <tr><th>체크리스트 상세 내용</th>
+         <td><textarea rows="10" cols="50" name="checklistContents" >[[${dto.checklistContents}]]</textarea></td></tr>
+          <tr><th>완료 여부</th>
+         <td><input type="number" name="isCompleted" th:value="${dto.isCompleted}"/></td></tr>
+      <tr><th colspan="2"><input type="submit" value="체크리스트 수정" /></th>
+      <a th:href="|checklistsDelete?checklistId=${dto.checklistId}|"></tr>
+      
+      <!--
+       th:value="${dto.}"
+       th:value="${dto.}"
+         -->
+   </table>
+</form>

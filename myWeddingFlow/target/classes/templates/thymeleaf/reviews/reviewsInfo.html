@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+리뷰 상세내용
+   <table border = "1" width ="600" align="center">
+      <tr><th width="100">리뷰 ID</th>
+         <td>[[${dto.reviewId}]]</td></tr>
+      <tr><th width="100">리뷰 대상 상품ID</th>
+         <td>[[${dto.productId}]]</td></tr>
+      <tr><th>작성자 ID</th>
+         <td>[[${dto.memberId}]]</td></tr>   
+      <tr><th>평점</th>
+         <td>[[${dto.rating}]]</td></tr>
+      <tr><th>리뷰 내용</th>
+         <td>[[${dto.reviewContents}]]</td></tr>
+      <tr><th>리뷰 작성 날짜</th>
+         <td>[[${dto.reviewDate}]]</td></tr>
+      <tr><td  colspan="2">         
+      <a th:href="|reviewsUpdate?reviewId=${dto.reviewId}|">체크리스트 수정</a>
+      <a th:href="|reviewsDelete?reviewId=${dto.reviewId}|">체크리스트 삭제</a>
+      </tr>
+      <!--  -->
+      
+   </table>
+</body>
+</html>

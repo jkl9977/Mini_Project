@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+회원수정 페이지입니다.<br />
+<form action="memberModify" method="post" >
+<input type="hidden" name="memberPassword" />
+<input type="hidden" name="memberPasswordCon" />
+회원번호 : <input type="text" name="memberNum" th:value="{dto.memberNum}" ><br />
+회원아이디 : <input type="text" name="memberId" th:value="{dto.memberId}" /><br />
+회원명 : <input type="text" name="memberName" th:value="{dto.memberName}" /><br />
+주소 : <input type="text" name="memberAddress" th:value="{dto.memberAddress}" /><br />
+상세주소 : <input type="text" name="memberAddressDetail" th:value="{dto.memberAddressDetail}"/><br />
+우편번호 : <input type="text" name="memberPostcode" th:value="{dto.memberPostcode}"/><br />
+회원연락처1 : <input type="tel" name="memberPhone1" th:value="{dto.memberPhone1}"/><br />
+회원연락처2 : <input type="tel" name="memberPhone2" th:value="{dto.memberPhone2}"/><br />
+생년월일 : <input type="date" name="memberBirth" th:value="{dto.memberBirth}"/><br />
+이메일 : <input type="email" name="memberEmail" th:value="{dto.memberEmail}"/><br />
+등록일 : <input type="date" name="memberJoinDate" th:value="{dto.memberJoinDate}"/><br />
+<input type="submit" value="회원수정 완료" /> 
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>productOptionsDetail</title>
+</head>
+<body>
+일정 리스트 html<br/>
+<a href="reservationsWrite">일정 작성하기</a>
+   <table border = "1" width ="600" align="center">
+      <tr><th>예약 ID</th><th>결제 ID</th><th>예약한 사용자 ID</th><th>예약한 상품 ID</th>
+      </tr>
+      <tr th:each="dto:${list}">
+         <td><a th:href="|reservationsDetail?reservationId=${dto.reservationId}|">
+         [[${dto.reservationId}]]</a></td>
+         <td>[[${dto.paymentId}]]</td>
+         <td>[[${dto.memberId}]]</td>
+     
+         <td>[[${dto.productId}]]</td>
+         </tr>
+      <!--  -->
+      
+   </table>
+</body>
+</html>

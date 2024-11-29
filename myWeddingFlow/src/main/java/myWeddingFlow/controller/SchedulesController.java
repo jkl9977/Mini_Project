@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import myWeddingFlow.command.SchedulesCommand;
+import myWeddingFlow.service.AutoNumService;
 import myWeddingFlow.service.schedules.SchedulesDeleteService;
 import myWeddingFlow.service.schedules.SchedulesDetailService;
 import myWeddingFlow.service.schedules.SchedulesListService;
@@ -28,8 +29,13 @@ public class SchedulesController {
 	SchedulesUpdateService schedulesUpdateService;
 	@Autowired
 	SchedulesDeleteService schedulesDeleteService;
+	@Autowired
+	AutoNumService autoNumService;
 	@GetMapping("schedulesWrite") 
-	public String schedulesWrite() {
+	public String schedulesWrite(SchedulesCommand schedulesCommand, Model model) {
+		String autoNum=autoNumService.execute("schedule_","Schedule_id",10,"Schedules");
+		schedulesCommand.setScheduleId(autoNum);
+		model.addAttribute("scheduleCommand", schedulesCommand);
 		return "thymeleaf/schedules/schedulesForm";
 	}
 	@PostMapping("schedulesRegist")

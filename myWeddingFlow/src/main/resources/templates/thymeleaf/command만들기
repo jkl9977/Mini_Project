@@ -1,0 +1,25 @@
+### **6. `reservations` (예약 관리 테이블)**
+
+- **설명:** 개별 상품 및 패키지 예약(결제) 정보를 관리.
+- **컬럼:**
+    - `reservation_id` (PK): 예약 ID. (`selected_item_id` (PK): 선택 목록 ID 값을 그대로 여기에 넣는다)
+    - `payment_id` (FK): 결제 ID.
+    - `user_id` (FK): 예약한 사용자 ID (`users.user_id` 참조).
+    - `product_id` (FK): 예약한 상품 ID (`products.product_id` 참조).
+    - `total_price`: 총 예약 금액.
+    - `reservation_date`: 예약 날짜.
+    - `status`: 예약 상태 (`대기`, `완료`, `취소`).
+    
+-- schedulesCommand, schedulesDTO
+파일명에는 s 붙이기
+
+String scheduleId;
+String memberId;
+String scheduleSubject;
+String scheduleContents;
+@DateTimeFormat(pattern="yyyy-MM-dd")
+LocalDate scheduleDate;
+String startTime;
+String endTime;
+String scheduleLocation;
+String scheduleStatus;

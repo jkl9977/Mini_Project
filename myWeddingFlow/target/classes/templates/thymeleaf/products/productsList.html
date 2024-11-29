@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+상품목록 리스트
+<table >
+<tr><td>상품아이디 </td><td>업체명 </td><td>상품 타입(개별, 패키지) </td><td>상품이름 </td></tr>
+
+<tr th:each="dto:${list}">
+<td><a th:href="|productsDetail?productId=${dto.productId}|">[[${dto.productId}]]</a> </td><td>[[${dto.vendorNum}]] </td><td>[[${dto.productType}]] </td><td>[[${dto.productType}]] </td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+체크리스트 리스트<br/>
+<a href="checklistsWrite">체크리스트 작성하기</a>
+   <table border = "1" width ="600" align="center">
+      <tr><th>체크리스트 ID</th><th>사용자 ID</th><th>체크리스트 제목</th><th>목표 날짜</th><th>완료 여부</th></tr>
+      <tr th:each="dto:${list}">
+         <td><a th:href="|checklistsDetail?checklistId=${dto.checklistId}|">[[${dto.checklistId}]]</a></td>
+         <td>[[${dto.memberId}]]</td>
+         <td>[[${dto.checklistSubject}]]</td>
+     
+         <td>[[${dto.goalDate}]]</td>
+         <td>[[${dto.isCompleted}]]</td></tr>
+      <!--  -->
+      
+   </table>
+</body>
+</html>

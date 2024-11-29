@@ -1,0 +1,21 @@
+체크리스트 상세내용
+   <table border = "1" width ="600" align="center">
+      <tr><th width="100">체크리스트 ID</th>
+         <td>[[${dto.checklistId}]]</td></tr>
+      <tr><th width="100">사용자 ID</th>
+         <td>[[${dto.memberId}]]</td></tr>
+      <tr><th>체크리스트 제목</th>
+         <td>[[${dto.checklistSubject}]]</td></tr>   
+      <tr><th>목표 날짜</th>
+         <td>[[${dto.goalDate}]]</td></tr>
+      <tr><th>체크리스트 상세 내용</th>
+         <td>[[${dto.checklistContents}]]</td></tr>
+      <tr><th>완료 여부</th>
+         <td>[[${dto.isCompleted}]]</td></tr>
+      <tr><td  colspan="2">         
+      <a th:href="|checklistsUpdate?checklistId=${dto.checklistId}|">체크리스트 수정</a>
+      <a th:href="|checklistsDelete?checklistId=${dto.checklistId}|">체크리스트 삭제</a>
+      </tr>
+      <!--  -->
+      
+   </table>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>productOptionsDetail</title>
+</head>
+<body>
+<form action="productOptionsModify" method="post" >
+   <table border = "1" width ="600" align="center">
+      <tr><th width="100">옵션ID</th>
+         <td><input type="text" name="optionId" th:value="${dto.optionId}"/></td></tr>
+      <tr><th width="100">관련 상품 번호</th>
+         <td><input type="text" name="productId" th:value="${dto.productId}" />
+         <input type="button" id="productSearch" value="상품검색"></td></tr>
+      <tr><th>옵션이름</th>
+         <td><input type="text" name="optionName" th:value="${dto.optionName}"/></td></tr>   
+      <tr><th>옵션추가금액</th>
+         <td><input type="text" name="optionPrice"  th:value="${dto.optionPrice}"/></td></tr>
+      <tr><th>상품가격</th>
+         <td><input type="text" name="isAvailable" th:value="${dto.isAvailable}"/></td></tr>
+      <tr><th colspan="2"><input type="submit" value="옵션 수정" /></th></tr>
+   </table>
+</form>
+</body>
+</html>

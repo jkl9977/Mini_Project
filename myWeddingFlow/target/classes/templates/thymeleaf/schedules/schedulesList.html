@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+일정 리스트 html<br/>
+<a href="schedulesWrite">일정 작성하기</a>
+   <table border = "1" width ="600" align="center">
+      <tr><th>일정 ID</th><th>사용자 ID</th><th>일정 제목</th><th>일정 상태</th>
+      </tr>
+      <tr th:each="dto:${list}">
+         <td><a th:href="|schedulesDetail?scheduleId=${dto.scheduleId}|">
+         [[${dto.scheduleId}]]</a></td>
+         <td>[[${dto.memberId}]]</td>
+         <td>[[${dto.scheduleSubject}]]</td>
+     
+         <td>[[${dto.scheduleStatus}]]</td>
+         </tr>
+      <!--  -->
+      
+   </table>
+</body>
+</html>

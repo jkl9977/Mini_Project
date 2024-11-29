@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>productOptionsInfo</title>
+</head>
+<body>
+   <table border = "1" width ="600" align="center">
+      <tr><th width="100">옵션ID</th>
+         <td>[[${dto.optionId}]]</td></tr>
+      <tr><th width="100">관련 상품 번호</th>
+         <td>[[${dto.productId}]]</td></tr>
+      <tr><th>옵션이름</th>
+         <td>[[${dto.optionName}]]</td></tr>   
+      <tr><th>옵션추가금액</th>
+         <td>[[${dto.optionPrice}]]</td></tr>
+      <tr><th>상품가격</th>
+         <td>[[${dto.isAvailable}]]</td></tr>
+         
+       
+      <!-- th:value="${dto.optionId}"
+      th:value="${dto.productNum}"
+      th:value="${dto.optionName}"
+      th:value="${dto.optionPrice}"
+      th:value="${dto.isAvailable}" -->
+      
+   </table>
+     <a th:href="|productOptionsUpdate?optionId=${dto.optionId}|">옵션수정하기</a> | 
+         <a th:href="|productOptionsDelete?optionId=${dto.optionId}|">옵션삭제하기</a>
+</body>
+</html>

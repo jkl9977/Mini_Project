@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import myWeddingFlow.command.BudgetManagementCommand;
+import myWeddingFlow.command.BudgetManagementCommand;
+import myWeddingFlow.service.AutoNumService;
 import myWeddingFlow.service.budgetManagement.BudgetManagementDeleteService;
 import myWeddingFlow.service.budgetManagement.BudgetManagementDetailService;
 import myWeddingFlow.service.budgetManagement.BudgetManagementListService;
@@ -28,8 +30,13 @@ public class BudgetManagementController {
 	BudgetManagementUpdateService budgetManagementUpdateService;
 	@Autowired
 	BudgetManagementDeleteService budgetManagementDeleteService;
+	@Autowired
+	AutoNumService autoNumService;
 	@GetMapping("budgetManagementWrite")
-	public String budgetManagementWrite() {
+	public String budgetManagementWrite(BudgetManagementCommand budgetManagementCommand, Model model) {
+		String autoNum=autoNumService.execute("budget_","Budget_Id",8,"BudgetManagements");
+		budgetManagementCommand.setBudgetId(autoNum);
+		model.addAttribute("budgetManagementCommand", budgetManagementCommand);
 		return "thymeleaf/budgetManagement/budgetManagementForm";
 	}
 	@PostMapping("budgetManagementRegist")
